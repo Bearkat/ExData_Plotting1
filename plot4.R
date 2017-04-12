@@ -15,12 +15,12 @@ dt1 <- dmy_hms(dt)
 png(filename = "plot4.png")
 par(mfrow = c(2, 2))
 plot(dt1, power_data$Global_active_power, ylab = "Global Active Power (kilowatts)", xlab = "", type = "l");
-plot(dt1, power_data$Voltage, ylab = "Voltage", xlab = "", type = "l");
+plot(dt1, power_data$Voltage, ylab = "Voltage", xlab = "datetime", type = "l");
 plot(dt1, power_data$Sub_metering_1, ylab = "Energy sub metering", xlab = "", type = "n");
 lines(dt1, power_data$Sub_metering_1, col = "black");
 lines(dt1, power_data$Sub_metering_2, col = "red");
 lines(dt1, power_data$Sub_metering_3, col = "blue");
 legend("topright", col = c("black", "red", "blue"), lty = c(1, 1, 1), 
        legend = c("sub_metering_1", "sub_metering_2", "sub_metering_3"), cex = 0.7);
-plot(dt1, power_data$Global_reactive_power, ylab = "Global_reactive_power", xlab = "", type = "l");
+plot(dt1, power_data$Global_reactive_power, ylab = "Global_reactive_power", xlab = "datetime", type = "l");
 dev.off()
